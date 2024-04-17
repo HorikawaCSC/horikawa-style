@@ -42,6 +42,9 @@
 \renewcommand\Large{\@setfontsize\Large{14bp}{16bp}}
 \renewcommand\LARGE{\@setfontsize\LARGE{18bp}{20bp}}
 
+% 行間の設定
+\renewcommand{\baselinestretch}{1.2}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 余白の設定
 \usepackage[top=20truemm,bottom=25truemm,left=25truemm,right=25truemm]{geometry}
@@ -54,20 +57,16 @@
         {
             {\LARGE \textbf{\@title} \par}
             \ifx\@subtitle\@empty\else
-            \vskip.5\baselineskip
             {\large \textbf{------\@subtitle ------} \par}
             \fi
         }
-        \vskip.5\baselineskip
         {
-            \lineskip .5\jlreq@zh
             \begin{tabular}[t]{c} \large \textsf{\@author} \end{tabular}%
             \par
         }
     \end{center}%
     \par
     \vskip\baselineskip
-    %\ifvoid\jlreq@abstractbox\else\unvbox\jlreq@abstractbox\fi
 }
 
 % 要旨
