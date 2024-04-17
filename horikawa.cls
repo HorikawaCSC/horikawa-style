@@ -30,3 +30,26 @@
 \DeclareRobustCommand\subtitle[1]{\gdef\@subtitle{#1}}
 
 \renewcommand{\abstractname}{\large \textbf{要旨}}
+
+\usepackage{luatexja-fontspec}
+
+\setmainjfont[
+    YokoFeatures       = {JFM=jlreq},
+    TateFeatures       = {JFM=jlreqv},
+    BoldFont           = MS-Gothic,
+    BoldFeatures       = {FakeBold=2},
+    ItalicFont         = MS-Mincho,
+    ItalicFeatures     = {FakeSlant=0.33},
+    BoldItalicFont     = MS-Gothic,
+    BoldItalicFeatures = {FakeBold=2, FakeSlant=0.33}
+]{MS-Mincho}
+\setsansjfont[
+    YokoFeatures       = {JFM=jlreq},
+    TateFeatures       = {JFM=jlreqv},
+    BoldFont           = MS-Gothic,
+    BoldFeatures       = {FakeBold=2},
+    ItalicFont         = MS-Gothic,
+    ItalicFeatures     = {FakeSlant=0.33},
+    BoldItalicFont     = MS-Gothic,
+    BoldItalicFeatures = {FakeBold=2, FakeSlant=0.33}
+]{MS-Gothic}
