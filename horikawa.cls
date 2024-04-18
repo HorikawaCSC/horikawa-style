@@ -117,4 +117,7 @@ luatexbase.add_to_callback( "process_input_buffer",  zenkakuToComma, "zenkaku_to
 \end{luacode}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 出力するPDFにハイパーリンクを効かせる
 \usepackage[hidelinks]{hyperref}
+% 参考文献のスタイルを変更
+\renewcommand{\refname}{\normalsize\\ 参考文献}
