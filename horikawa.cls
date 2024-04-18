@@ -14,6 +14,14 @@
 % フォントの設定
 
 \usepackage{luatexja-fontspec}
+\setmainfont[
+    BoldFont           = MS-Gothic,
+    BoldFeatures       = {FakeBold=2},
+    ItalicFont         = MS-Mincho,
+    ItalicFeatures     = {FakeSlant=0.33},
+    BoldItalicFont     = MS-Gothic,
+    BoldItalicFeatures = {FakeBold=2, FakeSlant=0.33}
+]{MS-Mincho}
 \setmainjfont[
     YokoFeatures       = {JFM=jlreq},
     TateFeatures       = {JFM=jlreqv},
@@ -57,7 +65,7 @@
         {
             {\LARGE \textbf{\@title} \par}
             \ifx\@subtitle\@empty\else
-            {\large \textbf{------\@subtitle ------} \par}
+            {\large \textbf{――\@subtitle ――} \par}
             \fi
         }
         {
@@ -99,8 +107,14 @@
 % 読点「、」を全角カンマ「，」に置換
 \usepackage{luacode,luatexbase} 
 \begin{luacode}
-local function totenToComma (line)
-  return string.gsub(line, "、", "，") 
+local function zenkakuToComma (line)
+  line = string.gsub(line, "、", "，")
+  line = string.gsub(line, "（", "(")
+  line = string.gsub(line, "）", ")")
+  return line
 end
-luatexbase.add_to_callback( "process_input_buffer",  totenToComma, "toten_to_comma")
+luatexbase.add_to_callback( "process_input_buffer",  zenkakuToComma, "zenkaku_to_comma")
 \end{luacode}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[hidelinks]{hyperref}
