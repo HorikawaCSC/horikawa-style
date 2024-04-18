@@ -5,5 +5,9 @@
 ## 使い方
 
 `horikawa.cls`をダウンロードして作業ディレクトリに配置します。<br>
-プリアンブルにて`\documentclass{horikawa}`を使用します。<br>
-**LuaLaTeXのみで使えます**。
+プリアンブルにて`\documentclass{horikawa}`を使用します。
+
+## 注意
+
+* **LuaLaTeXでのみ使えます**
+* MS明朝・MSゴシックがインストールされている必要があります
