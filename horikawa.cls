@@ -64,9 +64,6 @@
     \begin{center}%
         {
             {\LARGE \textbf{\@title} \par}
-            \ifx\@subtitle\@empty\else
-            {\large \textbf{――\@subtitle ――} \par}
-            \fi
         }
         {
             \begin{tabular}[t]{c} \large \textsf{\@author} \end{tabular}%
@@ -88,7 +85,11 @@
 }{\vskip\baselineskip}
 
 % 副題設定用のコマンド
-\DeclareRobustCommand\subtitle[1]{\gdef\@subtitle{#1}}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+	\apptocmd{\@title}{\\\large \textbf{――#1 ――} \par}{}{}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 見出しの設定
@@ -105,7 +106,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 読点「、」を全角カンマ「，」に置換
-\usepackage{luacode,luatexbase} 
+\usepackage{luacode,luatexbase}
 \begin{luacode}
 local function zenkakuToComma (line)
   line = string.gsub(line, "、", "，")
