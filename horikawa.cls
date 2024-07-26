@@ -74,6 +74,8 @@
     \vskip\baselineskip
 }
 
+\renewcommand{\thanks}[1]{(#1)}
+
 % 要旨
 \renewcommand{\abstractname}{\large \textbf{要旨}}
 \renewenvironment{abstract}{
@@ -88,21 +90,26 @@
 \usepackage{etoolbox}
 \makeatletter
 \providecommand{\subtitle}[1]{% add subtitle to \maketitle
-	\apptocmd{\@title}{\\\large \textbf{――#1 ――} \par}{}{}
+	\apptocmd{\@title}{\\\large \textbf{――#1――} \par}{}{}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 見出しの設定
-\RenewBlockHeading{section}{1}{%
-    font={\Large\bfseries},
-    after_label_space=0.5em,
-    label_format={\thesection.}
-}
-\RenewBlockHeading{subsection}{1}{%
-    font={\normalsize\bfseries},
-    after_label_space=0.5em,
-    label_format={\thesubsection}
-}
+
+\usepackage{titlesec}
+
+\titleformat{\section}% command
+    [block]% shape
+    {\bfseries\Large}% format
+    {\thesection.}% label
+    {0.5em}% sep
+    {}% before-code
+\titleformat{\subsection}% command
+    [block]% shape
+    {\bfseries\normalsize}% format
+    {\thesubsection}% label
+    {0.5em}% sep
+    {}% before-code
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 読点「、」を全角カンマ「，」に置換
