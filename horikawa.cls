@@ -95,21 +95,16 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 見出しの設定
-
-\usepackage{titlesec}
-
-\titleformat{\section}% command
-    [block]% shape
-    {\bfseries\Large}% format
-    {\thesection.}% label
-    {0.5em}% sep
-    {}% before-code
-\titleformat{\subsection}% command
-    [block]% shape
-    {\bfseries\normalsize}% format
-    {\thesubsection}% label
-    {0.5em}% sep
-    {}% before-code
+\RenewBlockHeading{section}{1}{%
+    font={\Large\bfseries},
+    after_label_space=0.5em,
+    label_format={\thesection.}
+}
+\RenewBlockHeading{subsection}{1}{%
+    font={\normalsize\bfseries},
+    after_label_space=0.5em,
+    label_format={\thesubsection}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 読点「、」を全角カンマ「，」に置換
