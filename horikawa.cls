@@ -8,7 +8,11 @@
 
 % jlreqクラスを基底に使用。
 % フォントサイズは10.5P
-\LoadClass[fontsize=10.5pt,jafontsize=10.5pt]{jlreq}
+\LoadClass[
+    fontsize=10.5pt,
+    jafontsize=10.5pt,
+    head_space=20mm, foot_space=25mm, gutter=25mm, fore-edge=25mm
+]{jlreq}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % フォントの設定
@@ -52,10 +56,6 @@
 
 % 行間の設定
 \renewcommand{\baselinestretch}{1.2}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 余白の設定
-\usepackage[top=20truemm,bottom=25truemm,left=25truemm,right=25truemm]{geometry}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % タイトルの設定
