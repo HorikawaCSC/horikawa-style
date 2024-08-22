@@ -19,33 +19,33 @@
 
 \usepackage{luatexja-fontspec}
 \setmainfont[
-    BoldFont           = MS-Gothic,
+    BoldFont           = MS Gothic,
     BoldFeatures       = {FakeBold=2},
-    ItalicFont         = MS-Mincho,
+    ItalicFont         = MS Mincho,
     ItalicFeatures     = {FakeSlant=0.33},
-    BoldItalicFont     = MS-Gothic,
+    BoldItalicFont     = MS Gothic,
     BoldItalicFeatures = {FakeBold=2, FakeSlant=0.33}
-]{MS-Mincho}
+]{MS Mincho}
 \setmainjfont[
     YokoFeatures       = {JFM=jlreq},
     TateFeatures       = {JFM=jlreqv},
-    BoldFont           = MS-Gothic,
+    BoldFont           = MS Gothic,
     BoldFeatures       = {FakeBold=2},
-    ItalicFont         = MS-Mincho,
+    ItalicFont         = MS Mincho,
     ItalicFeatures     = {FakeSlant=0.33},
-    BoldItalicFont     = MS-Gothic,
+    BoldItalicFont     = MS Gothic,
     BoldItalicFeatures = {FakeBold=2, FakeSlant=0.33}
-]{MS-Mincho}
+]{MS Mincho}
 \setsansjfont[
     YokoFeatures       = {JFM=jlreq},
     TateFeatures       = {JFM=jlreqv},
-    BoldFont           = MS-Gothic,
+    BoldFont           = MS Gothic,
     BoldFeatures       = {FakeBold=2},
-    ItalicFont         = MS-Gothic,
+    ItalicFont         = MS Gothic,
     ItalicFeatures     = {FakeSlant=0.33},
-    BoldItalicFont     = MS-Gothic,
+    BoldItalicFont     = MS Gothic,
     BoldItalicFeatures = {FakeBold=2, FakeSlant=0.33}
-]{MS-Gothic}
+]{MS Gothic}
 
 % フォントサイズの設定
 \renewcommand\small{\@setfontsize\small{9bp}{12bp}}
