@@ -57,6 +57,12 @@
 % 行間の設定
 \renewcommand{\baselinestretch}{1.2}
 
+% 図表のキャプションのフォントサイズ
+\usepackage{caption}
+\captionsetup[figure]{format=plain, labelformat=simple, font={small,bf}}
+\captionsetup[table]{format=plain, labelformat=simple, font={small,bf}}
+\captionsetup[lstlisting]{format=plain, labelformat=simple, font={small,bf}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % タイトルの設定
 \def\@maketitle{
