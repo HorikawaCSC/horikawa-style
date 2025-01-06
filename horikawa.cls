@@ -3,7 +3,7 @@
 % 2023年度版に則り作成。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\NeedsTeXFormat{LaTeX2e}[2017/04/15]
+\NeedsTeXFormat{LaTeX2e}[2021/06/01]
 \ProvidesClass{horikawa}[2024/02/17]
 
 % jlreqクラスを基底に使用。
@@ -130,3 +130,28 @@ luatexbase.add_to_callback( "process_input_buffer",  zenkakuToComma, "zenkaku_to
 \usepackage[hidelinks]{hyperref}
 % 参考文献のスタイルを変更
 \renewcommand{\refname}{\normalsize\\ 参考文献}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% listingsの設定
+\usepackage{listings}
+\lstset{
+    frame={tb},
+    numbers=left,
+    breaklines=true,
+    xleftmargin=3cm,
+    xrightmargin=3cm
+}
+
+\usepackage{tcolorbox,varwidth,multicol}
+\tcbuselibrary{xparse,hooks,skins,breakable}
+\DeclareTColorBox{breakablelistings}{}%
+{enhanced,colframe=white,colback=white,breakable,right=0mm,left=0mm,
+	underlay first={\path[draw](frame.south east)node[left]{次ページへ続く};},
+	underlay middle={
+		\path[draw](frame.north west)node[right]{前ページの続き};
+		\path[draw](frame.south east)node[left]{次ページへ続く};},
+	underlay last={\path[draw](frame.north west)node[right]{前ページの続き};}}
+
+%% lstlisting環境をフック
+\AddToHook{env/lstlisting/before}{\begin{breakablelistings}}
+\AddToHook{env/lstlisting/after}{\end{breakablelistings}}
